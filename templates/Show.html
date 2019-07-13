@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table align="center" border="0">
+
+        <tr>
+            {% for x in qs %}
+        <td>
+             <img src="{{ x.photo.url }}" width="200" height="150">
+        </td>
+        </tr>
+                <tr>
+                <td>
+                     Name:{{ x.Trainee_name}}<br>
+               Contact: {{ x.Trainee_contact}}<br>
+               Timings: {{ x.Trainee_Timings}}<br>
+                </td>
+                </tr>
+
+    {% endfor %}
+    </table>
+
+</body>
+</html>

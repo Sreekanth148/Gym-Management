@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "Title.html" %}
+{% include "Menu.html" %}
+
+{% load staticfiles %}
+
+    <table border="0" align="center">
+
+        <tr>
+<td>
+            <style>
+        .image{
+            display: inline-block;
+            width: 15%;
+            margin: 20px 50px 30px 50px  ;
+
+        }
+    </style>
+            {% for x in qs %}
+           <div class="image">
+              <img src="{{ x.image.url }}" width="150" height="100"></a><br></a>
+
+
+           </div>
+
+{% endfor %}
+        </td>
+                </tr>
+
+
+
+
+    </table>
+
+
+</body>
+</html>

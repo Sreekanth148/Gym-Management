@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center" border="0">
+
+        <tr>
+            {% for x in qs %}
+        <td>
+             <img src="{{ x.image.url }}" alt="">
+        </td>
+        </tr>
+                <tr>
+                <td>
+                    CenterName:{{ x.center_name}}<br>
+                Contact: {{ x.contact}}<br>
+                Address: {{ x.address}}<br>
+                </td>
+                </tr>
+
+    {% endfor %}
+    </table>
+
+
+
+
+</body>
+</html>

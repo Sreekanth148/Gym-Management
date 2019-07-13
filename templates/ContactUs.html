@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%load staticfiles %}
+{% include "Title.html" %}
+{% include "Menu.html" %}
+
+<table align="center">
+    <tr>
+        {% for x in qs %}
+        <td width="150">
+            <img src="{{ x.Image.url }}" alt="">
+        </td>
+
+            <td width="150">{{ x.contact }}</td>
+            <td width="150">{{ x.email }}</td>
+        {% endfor %}
+    </tr>
+</table>
+</body>
+</html>

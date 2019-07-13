@@ -1,0 +1,48 @@
+<html>
+<body>
+{% load staticfiles %}
+{#    <table align="center" border="2" bgcolor="#ffe4c4" >#}
+{#        <tr><th>MAIN FORM</th></tr>#}
+{#        <form action="/gym_details/" method="post">#}
+{#            {% csrf_token %}#}
+{#            <tr><th><button type="submit"> GYM DETAILS</button> </th></tr>#}
+{#        </form>#}
+{#        <tr><th><button type="submit">TRAINER DETAILS</button> </th></tr>#}
+{#        <tr><th><button type="submit"> ADMIN</button> </th></tr>#}
+{#        <tr><th><button type="submit">QUERY MODULE</button> </th></tr>#}
+{#    </table>#}
+<table align="center">
+    <tr>
+        <th width="200">
+            <img src="{% static 'images/thHGXL5M3B.jpg' %}" width="200" height="100"></th>
+
+        <th width="200"><h1>Gym Management System</h1></th>
+    </tr>
+    <tr>
+        <td></td>
+
+        <td>
+            <table align="center" border="1" bgcolor="yellow">
+                <tr>
+
+
+                    <th width="200"><a href="/traineeDetails/?id={{ id }}"><h3>Trainee</h3> </a></th>
+                    <th width="200"><a href="/gymDetails/?id={{ id }}"><h3>Gym Center Details</h3></a></th>
+                    <th width="200"><a href="/update/?id={{ id }}"><h3>Update Profile</h3></a></th>
+                    <th width="200"><a href="/feedback/?id={{ id }}"><h3>Feedback</h3></a></th>
+
+                    <th width="200"><a href="/logout/"><h3>Logout</h3></a></th>
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
+        </td>
+
+    </tr>
+</table>
+
+<h3 align="center">WelCome To : {{ username }}</h3>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'UserMainPage.html' %}
+{% load staticfiles %}
+
+    <table border="2" align="center" >
+
+        <tr>
+<td>
+            <style>
+        .image{
+            display: inline-block;
+            width: 15%;
+            margin: 20px 50px 30px 50px  ;
+
+        }
+    </style>
+            {% for x in qs %}
+           <div class="image">
+               <a href="/show/?id={{ x.id }}"><img src="{{ x.photo.url }}" width="200" height="100"></a><br></a>
+               <table align="center" border="1">
+                   <tr>
+                       <td>
+                            Name:{{ x.Trainee_name}}
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           Contact: {{ x.Trainee_contact}}
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           Timings: {{ x.Trainee_Timings}}<br>
+                       </td>
+                   </tr>
+               </table>
+
+
+
+
+           </div>
+
+
+        {% endfor %}
+        </td>
+                </tr>
+
+
+
+
+    </table>
+
+
+
+
+</body>
+</html>

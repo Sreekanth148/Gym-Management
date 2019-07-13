@@ -1,0 +1,69 @@
+<html>
+<body>
+{#{% include "Title.html" %}#}
+{% include "Title.html" %}
+{% include "Menu.html" %}
+
+
+<form action="/logindetails/" method="post">
+    {% csrf_token %}
+    <table align="center" border="2" bgcolor="yellow">
+        <tr><th> <h1>LOGIN</h1></th></tr>
+        <tr><th><input type="text" placeholder="name" name="username" required > </th></tr>
+        <tr><th><input type="password" placeholder="password" name="password" required> </th></tr>
+        <tr><th><button type="submit">LOGIN</button> </th></tr>
+
+        <tr>
+            <th>
+                <a href="/forgetpassword/?type=password">forget password</a>
+            </th>
+        </tr>
+    </table>
+</form>
+{{ messsage }}
+ {% if type == "password" %}
+     <form action="/forgetdetails/" method="post">
+     {% csrf_token %}
+     <table align="center" border="1">
+     <tr>
+         <th>
+             <input type="text" placeholder="Username" name="username">
+         </th>
+     </tr>
+     <tr>
+         <td>
+             <input type="submit" value="Submit">
+         </td>
+     </tr>
+     </table>
+     </form>
+{% endif %}
+{% if type == "forget_type" %}
+    <form action="/resetpassword/" method="post">
+    {% csrf_token %}
+
+    <table align="center" border="1">
+    <tr>
+        <td>
+            <input type="password" placeholder="New Password" name="password1">
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <input type="password" placeholder="Confirm Password" name="password2">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <input type="submit" value="Submit">
+        </th>
+    </tr>
+    </table>
+    </form>
+    <h3 align="center" style="background-color: yellow">{{ message }}</h3>
+{% endif %}
+<h3 align="center" style="background-color: red">{{ message }}</h3>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "UserMainPage.html" %}
+<form action="/userUpdate/" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="{{ id }}" name="id">
+    {% csrf_token %}
+
+<table align="center">
+    <tr>
+        <th>Update Details</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" value="{{ name }}" name="name" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="gender">
+                <option value="">Select</option>
+                <option value="">Male</option>
+                <option value="">Fe Male</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <input type="number" value="{{ contact }}" name="contact" required></td>
+    </tr>
+    <tr><td>
+        <input type="email" value="{{ email }}" name="email"  required></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="file" required name="image" value="{{ photo }}">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" value="{{ username }}" name="username" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="password" required value="{{ password }}" name="password">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Submit">
+        </td>
+
+    </tr>
+</table>
+    </form>
+<h3 align="center">{{ message }}</h3>
+
+
+
+
+</body>
+</html>

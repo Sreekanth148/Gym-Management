@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+{% include "Title.html" %}
+{% include "Menu.html" %}
+<form action="/registerdetails/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<table align="center">
+    <tr>
+        <th>Registration Page</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Name" name="name" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="gender" id="">
+                <option value="">Select</option>
+                <option value="">Male</option>
+                <option value="">Fe Male</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <input type="number" placeholder="Contact" name="contact" required></td>
+    </tr>
+    <tr><td>
+        <input type="email" placeholder="email" name="email"  required></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="file" required name="image">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Username" name="username" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="password" required placeholder="Password" name="password">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Submit">
+        </td>
+
+    </tr>
+</table>
+    </form>
+</body>
+</html>
